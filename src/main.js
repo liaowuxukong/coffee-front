@@ -11,7 +11,7 @@ import 'common/stylus/index.styl';
 Vue.use(VueRouter);
 Vue.use(VueResource);
 let routes = [
-  {path: '/', name: 'index', component: App, children: [{path: '/', component: goods}]}
+  {path: '/', name: '/index', component: App, children: [{path: '/goods', component: goods}]}
 ];
 let router = new VueRouter({
   'linkActiveClass': 'active',
@@ -20,5 +20,5 @@ let router = new VueRouter({
 let app = new Vue({
   router
 }).$mount('#app');
-  router.push('/');
+router.push({path: '/goods'});
 export default app;
