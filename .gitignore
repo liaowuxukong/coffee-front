@@ -1,0 +1,13 @@
+.DS_Store
+node_modules/
+dist/
+npm-debug.log
+
+.deploy_git/
+node_modules/
+public/
+.babelrc
+.editorconfig
+.eslintignore
+.eslintrc.js
+.idea/
