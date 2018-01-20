@@ -5,14 +5,13 @@ import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
 import App from './App';
 import goods from './components/goods/goods.vue';
-import seller from './components/seller/seller.vue';
 import 'common/stylus/index.styl';
 // 安装 "VueRouter"这个插件
 /* eslint-disable no-new */
 Vue.use(VueRouter);
 Vue.use(VueResource);
 let routes = [
-  {path: '/', name: 'index', component: App, children: [{path: '/goods', component: goods}, {path: '/seller', component: seller}]}
+  {path: '/', name: 'index', component: App, children: [{path: '/', component: goods}]}
 ];
 let router = new VueRouter({
   'linkActiveClass': 'active',
@@ -21,5 +20,5 @@ let router = new VueRouter({
 let app = new Vue({
   router
 }).$mount('#app');
-  router.push('/goods');
+  router.push('/');
 export default app;
