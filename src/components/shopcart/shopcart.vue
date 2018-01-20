@@ -56,6 +56,14 @@
 <script type="text/ecmascript-6">
   import cartControl from '../cartControl/cartControl.vue';
   import BScroll from 'better-scroll';
+  function getQueryString(name) {
+    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)');
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) {
+      return unescape(r[2]);
+    }
+    return null;
+  }
   export default {
     props: {
       selectFoods: {
@@ -133,7 +141,7 @@
         this.selectFoods.forEach((food) => {
           selectIds.push(food.id);
         });
-        window.alert('支付' + this.totalPrice + '元' + ',选择了如下id:' + selectIds.join(';'));
+        window.alert('支付' + this.totalPrice + '元' + ',选择了如下id:' + selectIds.join(';') + ',货架id:' + getQueryString('id'));
         this.$http.post('http://127.0.0.1:7001/buy', {
           ids: selectIds
         }).then(function(response) {
