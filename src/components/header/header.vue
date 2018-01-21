@@ -31,7 +31,7 @@
       this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
     },
     mounted() {
-      this.$http.get('http://127.0.0.1:7001/bannerList')
+      this.$http.get('http://www.ealam.cn/bannerList')
         .then(function (response) {
         this.banner = response.body[0];
       });

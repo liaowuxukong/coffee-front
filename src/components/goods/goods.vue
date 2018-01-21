@@ -61,7 +61,7 @@
     },
     created() {
       this.goods = [];
-      this.$http.get('http://127.0.0.1:7001/goodList')
+      this.$http.get('http://www.ealam.cn/goodList')
         .then(function (response) {
         this.goods = response.body;
         this.$nextTick(() => {
